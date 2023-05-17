@@ -77,7 +77,7 @@ def profile_user(request):
     if request.user.is_superuser:
         return redirect('homepage')  
     elif request.user:
-        profile = request.user.customer
+        profile = request.user
     context = {'profile' : profile}
     return render(request, 'profile_user.html', context)
 
@@ -85,7 +85,7 @@ def profile_user(request):
 @login_required(login_url='login')
 def update_user(request):
 
-    profile = request.user.customer
+    profile = request.user
     form = CustomersForm(request.POST or None,instance=profile)
 
     context = {'form': form}

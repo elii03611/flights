@@ -98,10 +98,11 @@ def create_ticket(request, userId, flightId):
         t = Ticket(flight=flight, customer=customer)
         t.save()
         flight.number_tickets = flight.number_tickets - 1
-
         flight.save()
-        return HttpResponse (f"""ticket number: [{t}] number flight: [{flight.id}] was added successfully,- 
-        You can see all the information on your flights""")
+        # messages.success(request, "New sample is added successfully!")
+        return redirect('/tickets')
+    # else:
+    #     messages.success(request, "New sample is added successfully!")
     else:
         return HttpResponse(f'no ticket')
 
@@ -135,21 +136,21 @@ class CreateFlights(CreateView):
 
     template_name = 'add_flights.html'
     form_class = FlightsForm
-    success_url = '../homepage'
+    success_url = '/company_airline'
 
 
 class CreateCountries(CreateView):
     model = Countrie
     template_name = 'add_countries.html'
     fields = '__all__'
-    success_url = '../homepage'
+    success_url = '/company_airline'
 
 
 class CreateCustomers(CreateView):
     model = Customer
     template_name = 'add_customers.html'
     fields = '__all__'
-    success_url = '../homepage'
+    success_url = '/company_airline'
 
 
 class CreateAirlineCompanies(CreateView):
@@ -157,7 +158,7 @@ class CreateAirlineCompanies(CreateView):
     template_name = 'add_airline_companies.html'
     fields = '__all__'
     exclude = ['customers']
-    success_url = '../homepage'
+    success_url = '/company_airline'
 
 
 class FlightsList(ListView):
@@ -170,6 +171,8 @@ class FlightsList(ListView):
 class CountryList(ListView):
     model = Countrie
     context_object_name = 'country'
+    
+
 
 class AirlineCompaniesList(ListView):
 

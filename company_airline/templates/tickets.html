@@ -1,11 +1,20 @@
 {% extends 'partials/base.html' %} 
 
+{%block content%} <hr>
+<h1>Your Flights</h1>
 
-    {%block content%} <hr>
-    <h1>Flights</h1>
+
+<div class="card" style="width: 18rem;">
     {% for ticket in tickets %} <hr>
-    Tickets ID: {{ticket.id}} {{ticket.flight}} <hr> <br> <br>
+
+    <div class="card-body">
+      <h5 class="card-title">Tickets ID:{{ticket.id}}</h5>
+      <p class="card-text">{{ticket.flight}}</p>
+      <p class="card-text">{{ticket.customer}}</p>
+    </div>
     {% endfor %}
 
-      
-    {%endblock content%} <hr>
+  </div>
+  {%endblock content%} <hr>
+
+
