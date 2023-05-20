@@ -27,7 +27,7 @@ def register(request):
 
             if user:
                 login(request, user)
-                return redirect('update_user')
+                return redirect('../update_user')
             else:
                 print("User not authenticated")
         

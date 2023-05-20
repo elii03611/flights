@@ -1,0 +1,11 @@
+{% extends 'partials/base.html' %} 
+
+
+    {%block content%} <hr>
+    <h1>Airline Companies:</h1>
+    {% for customer in customers %}
+    <a href="{{customer}}">{{customer}}</a><br> <br>
+    {% endfor %}
+    
+      
+    {%endblock content%} 

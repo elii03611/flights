@@ -13,15 +13,13 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     email = models.EmailField(unique=True, null=True)
-    # phone_number = PhoneNumberField(unique=True)
-    credit_card_no = models.CharField(max_length=50,unique=True)
 
 
 
 
   
     def __str__(self):
-        return f"First Name: {self.first_name}, Last Name: {self.last_name}"
+        return f"username: {self.user}, First Name: {self.first_name}, Last Name: {self.last_name}"
 
 
     def get_absolute_url(self):

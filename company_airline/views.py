@@ -8,7 +8,6 @@ from .forms import FlightsForm
 from .models import Airline_Companie, Countrie, Customer, Flight, Ticket
 from django.http import HttpResponse
 from django.db.models import Q
-from datetime import date, datetime
 # Create your views here.
 
 
@@ -59,6 +58,7 @@ def search(request):
 
 @login_required
 def create_flight(request):
+
     context = {'form': FlightsForm()}
     if 'flight' in request.GET:
 
@@ -77,13 +77,12 @@ def create_flight(request):
             number_tickets = form_filled.cleaned_data['number_tickets']
 
             flights = Flight.objects.filter(airline_company=airline_company, origin_country=origin_country,
-                                            destination_country=destination_country).exclude(number_tickets=number_tickets <= 0)
+            destination_country=destination_country).exclude(number_tickets=number_tickets <= 0)
 
             if flights.exists():
                 request.session['airline_company'] = str(airline_company)
                 request.session['origin_country'] = str(origin_country)
-                request.session['destination_country'] = str(
-                    destination_country)
+                request.session['destination_country'] = str(destination_country)
 
             return render(request, 'available_flights.html', {'flights': flights})
     return render(request, 'order_flight.html', context)
@@ -91,6 +90,9 @@ def create_flight(request):
 
 def create_ticket(request, userId, flightId):
     flight = Flight.objects.get(id=int(flightId))
+    print(create_ticket, "sdasf")
+    print(flight, "sdasf")
+
     if flight.number_tickets > 0:
 
         user = User.objects.get(id=int(userId))
@@ -182,18 +184,16 @@ class AirlineCompaniesList(ListView):
 
 
 class TicketsList(ListView):
+    paginate_by = 10
     model = Ticket
     context_object_name = 'tickets'
     template_name = 'tickets.html'
 
     def get_queryset(self, *args, **kargs):
-
-        user = User.objects.get(username=self.request.user)
-        customer = Customer.objects.get(user_id=user.id)
         all_ticket = super(TicketsList, self).get_queryset(*args, **kargs)
-        user_ticket = all_ticket.filter(customer=customer)
+        all_ticket = all_ticket.filter(flight = self.request.user.id)
 
-        return user_ticket.all()
+        return all_ticket.all()
 
 
 class CustomersList(ListView):
@@ -203,11 +203,11 @@ class CustomersList(ListView):
     template_name = 'customers.html'
 
     def get_queryset(self, *args, **kargs):
-        user = User.objects.get(username=self.request.user)
+        # user = User.objects.get(username=self.request.user)
         all_customers = super(CustomersList, self).get_queryset(*args, **kargs)
-        user_customers = all_customers.filter(user=user)
+        all_customers = all_customers.filter(user = self.request.user.id)
 
-        return user_customers.all()
+        return all_customers.all()
 
 
 class FlightsDetail(DetailView):

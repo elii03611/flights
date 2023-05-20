@@ -1,5 +1,4 @@
 
-from xml.dom import ValidationErr
 from django.db import models
 from django.urls import reverse
 from django_countries.fields import CountryField
