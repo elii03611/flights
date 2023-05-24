@@ -19,6 +19,8 @@ body {
   color: #848484;
   font-weight: 300;
   overflow-x: hidden;
+    background-image: url("../images/flights.jpg");
+    background-size: cover;
 }
 body.fh5co-offcanvas {
   overflow: hidden;
@@ -1977,10 +1979,4 @@ div.cs-select span {
   background: url(../images/hourglass.svg) center no-repeat #222222;
 }
 
-
-.body {
-  background-image: url("../images/alexander-schimmeck-DSOohFTAfno-unsplash.jpg");
-  background-size: cover;
-  padding: 1;
-  } 
-
+ 

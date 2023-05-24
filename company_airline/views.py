@@ -17,7 +17,6 @@ def about_us(request):
 def contact(request):
     return render(request, 'contact.html')
 
-
 def search(request):
     flight = Flight.objects.all()
 
@@ -87,7 +86,7 @@ def create_flight(request):
             return render(request, 'available_flights.html', {'flights': flights})
     return render(request, 'order_flight.html', context)
 
-
+@login_required
 def create_ticket(request, userId, flightId):
     flight = Flight.objects.get(id=int(flightId))
     print(create_ticket, "sdasf")
