@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet'>
 
 
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
@@ -18,9 +18,10 @@
 	<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 	<!-- CS Select -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/search_style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/search2_style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">  
+    <link type="text/css" rel="stylesheet" href="{% static 'css/search_style.css' %} ">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/search2_style.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">   {% endcomment %}
+	<base href="/">
 
 	
 
