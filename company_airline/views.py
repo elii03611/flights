@@ -52,7 +52,7 @@ def search(request):
     if qs:
         return render(request, 'flights_list.html', context)
     else:
-        return render(request, 'homepage.html', context)
+        return render(request, 'index.html', context)
     
 
 @login_required
