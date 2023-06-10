@@ -19,7 +19,7 @@ body {
   color: #848484;
   font-weight: 300;
   overflow-x: hidden;
-    background-image: url("../images/flights.jpg");
+    /* background-image: url("../images/flights.jpg"); */
     background-size: cover;
 }
 body.fh5co-offcanvas {
