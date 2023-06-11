@@ -19,13 +19,15 @@ body {
   color: #848484;
   font-weight: 300;
   overflow-x: hidden;
-    /* background-image: url("../images/flights.jpg"); */
-    background-size: cover;
+  background-size: cover;
 }
 body.fh5co-offcanvas {
   overflow: hidden;
 }
 
+.bodyindex {
+  background-image: url("../css/images/flights.jpg");
+}
 a {
   color: #F78536;
   -webkit-transition: 0.5s, ease;
