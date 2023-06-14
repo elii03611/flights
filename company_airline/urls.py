@@ -53,4 +53,4 @@ urlpatterns = [
     path('flights/',FlightsList.as_view(), name='flights'),
     path('customer_detail/<int:pk>',CustomerDetail.as_view(), name='customer_detail'),
     path('airline_companies_detail/<int:pk>',AirlineCompaniesDetail.as_view(), name='airline_companies_detail'),
-] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

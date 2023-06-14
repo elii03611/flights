@@ -136,11 +136,30 @@ USE_TZ = True
 # MEDIA_URL = 'images/'
 # STATIC_ROOT = (os.path.join(BASE_DIR, 'static'),)
 
-STATIC_URL = '/static/'
 # STATIC_ROOT = "/https://flights-6ham.onrender.com/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "company_airline/static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "company_airline/static"),
+# ]
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+
+import os 
+from django.conf.urls.static import static
+from django.conf import settings
+
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media') 
+
+    
+
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
