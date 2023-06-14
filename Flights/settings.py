@@ -137,7 +137,7 @@ USE_TZ = True
 # STATIC_ROOT = (os.path.join(BASE_DIR, 'static'),)
 
 STATIC_URL = '/static/'
-STATIC_ROOT = "/https://flights-6ham.onrender.com/"
+# STATIC_ROOT = "/https://flights-6ham.onrender.com/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "company_airline/static"),
 ]
