@@ -151,7 +151,7 @@ from django.conf import settings
 
 
 if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'company_airline/static')]
 else:
     STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
 
