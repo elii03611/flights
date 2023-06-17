@@ -1,0 +1,229 @@
+{% extends 'partials/base.html' %} {%block content%} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Flight</title>
+  </head>
+
+  <body class="bodyindex">
+    
+    <!-- end:header-top -->
+
+    <div>
+      <div class="fh5co-overlay"></div>
+      <div class="fh5co-cover" data-stellar-background-ratio="0.5">
+        <div class="desc">
+          <div class="container">
+            <div class="row">
+              <div>
+                <a href="index.html" id="main-logo">Travel</a>
+                <div class="tabulation">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a
+                        href="#flights"
+                        aria-controls="flights"
+                        role="tab"
+                        data-toggle="tab"
+                        >Flights</a
+                      >
+                    </li>
+                  </ul>
+                  <header id="fh5co-header-section" class="sticky-banner">
+                    <div class="container">
+                      <div class="nav-header">
+                        <h1 id="fh5co-logo">
+                          <a href="index.html"
+                            ><i class="icon-airplane"></i>Travel</a
+                          >
+                        </h1>
+                        <!-- START #fh5co-menu-wrap -->
+                      </div>
+                    </div>
+                  </header>
+                  <form method="GET" action=".">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div role="tabpanel" class="tab-pane active" id="flights">
+                        <div class="row">
+                          <div class="col-xxs-12 col-xs-6 mt">
+                            <div class="input-field">
+                              <label>From:</label>
+                              <select
+                                type="text"
+                                class="form-control"
+                                name="origin_country_id"
+                                id="from-place"
+                              >
+                                <option value="">select country...</option>
+                                <option>Nepal</option>
+                                <option>Thailand</option>
+                                <option>Russia</option>
+                                <option>Turkey</option>
+                                <option>France</option>
+                                <option>Spain</option>
+                                <option>United States of America</option>
+                                <option>Israel</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xxs-12 col-xs-6 mt">
+                            <div class="input-field">
+                              <label>To:</label>
+                              <select
+                                class="form-control"
+                                name="destination_country_id"
+                                id="from-place"
+                              >
+                                <option value="">select country...</option>
+                                <option>Nepal</option>
+                                <option>Thailand</option>
+                                <option>Russia</option>
+                                <option>Turkey</option>
+                                <option>France</option>
+                                <option>Spain</option>
+                                <option>United States of America</option>
+                                <option>Israel</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-xxs-12 col-xs-6 mt alternate">
+                            <div class="input-field">
+                              <label for="date-start">Check In:</label>
+                              <input
+                                type="date"
+                                class="form-control"
+                                name="departure_time"
+                                id="date-start"
+                                placeholder="mm/dd/yyyy"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-xxs-12 col-xs-6 mt alternate">
+                            <div class="input-field">
+                              <label for="date-end">Check Out:</label>
+                              <input
+                                type="date"
+                                class="form-control"
+                                name="landing_time"
+                                id="date-end"
+                                placeholder="mm/dd/yyyy"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-xs-12">
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-block"
+                              name="Search Flight"
+                            >
+                              Search Flights
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="footer">
+        <div class="container">
+          <div class="row row-bottom-padded-md">
+            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+              <h3>About Travel</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+                iure ipsum eveniet explicabo perferendis? Consequuntur nostrum
+              </p>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+              <h3>Top Flights Routes</h3>
+              <ul>
+                <li>
+                  <a href="https://en.wikipedia.org/wiki/Manila"
+                    >Manila flights</a
+                  >
+                </li>
+                <li><a href="#">Dubai flights</a></li>
+                <li><a href="#">Bangkok flights</a></li>
+                <li><a href="#">Tokyo Flight</a></li>
+                <li><a href="#">New York Flights</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+              <h3>Top Hotels</h3>
+              <ul>
+                <li><a href="#">Boracay Hotel</a></li>
+                <li><a href="#">Dubai Hotel</a></li>
+                <li><a href="#">Singapore Hotel</a></li>
+                <li><a href="#">Manila Hotel</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+              <h3>Interest</h3>
+              <ul>
+                <li><a href="#">Beaches</a></li>
+                <li><a href="#">Family Travel</a></li>
+                <li><a href="#">Budget Travel</a></li>
+                <li><a href="#">Food &amp; Drink</a></li>
+                <li><a href="#">Honeymoon and Romance</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+              <h3>Best Places</h3>
+              <ul>
+                <li><a href="#">Boracay Beach</a></li>
+                <li><a href="#">Dubai</a></li>
+                <li><a href="#">Singapore</a></li>
+                <li><a href="#">Hongkong</a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+              <h3>Affordable</h3>
+              <ul>
+                <li><a href="#">Food &amp; Drink</a></li>
+                <li><a href="#">Fare Flights</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <p class="fh5co-social-icons">
+                <a href="https://twitter.com/"><i class="icon-twitter2"></i></a>
+                <a href="https://www.facebook.com/"
+                  ><i class="icon-facebook2"></i
+                ></a>
+                <a href="https://www.instagram.com/"
+                  ><i class="icon-instagram"></i
+                ></a>
+                <a href="https://dribbble.com/"
+                  ><i class="icon-dribbble2"></i
+                ></a>
+                <a href="https://www.youtube.com/"
+                  ><i class="icon-youtube"></i
+                ></a>
+              </p>
+              All Rights Reserved To
+              <a href="https://github.com/elii03611" style="font-size: 17px"
+                >Eli Gershi</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {%endblock content%}
+  </body>
+</html>

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'company_airline',
     'accounts',
     'staff',
-    'django_countries'
+    # 'django_countries'
     
 ]
 
@@ -146,8 +146,7 @@ MEDIA_URL = '/media/'
 
 
 import os 
-from django.conf.urls.static import static
-from django.conf import settings
+
 
 
 if DEBUG:
