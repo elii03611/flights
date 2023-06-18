@@ -141,7 +141,7 @@ USE_TZ = True
 #     os.path.join(BASE_DIR, "company_airline/static"),
 # ]
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
 
@@ -149,12 +149,9 @@ import os
 
 
 
-if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'company_airline/static')]
-else:
-    STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media') 
+STATIC_ROOT = 'company_airline/static'
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media') 
 
     
 
